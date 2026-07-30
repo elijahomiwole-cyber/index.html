@@ -6,15 +6,23 @@
     <title>Waste Pickup Scheduler</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container">
 
-    <h1>🗑 Waste Pickup Scheduler</h1>
-    <p>Schedule your waste pickup easily.</p>
+    <header>
+        <h1>🗑 Waste Pickup Scheduler</h1>
+
+        <p class="subtitle">
+            Schedule waste pickups quickly and easily. Track pickup requests,
+            receive reminders, and submit feedback to improve waste management.
+        </p>
+    </header>
 
     <!-- Dashboard -->
-    <div class="dashboard">
+    <section class="dashboard">
+
         <div class="card">
             <h3>Total Pickups</h3>
             <p id="totalPickups">0</p>
@@ -34,112 +42,78 @@
             <h3>Pending</h3>
             <p id="pendingPickups">0</p>
         </div>
-    </div>
 
-    <!-- Pickup Form -->
-    <form id="pickupForm">
+    </section>
 
-        <input
-            type="text"
-            id="name"
-            placeholder="Full Name"
-            required>
+    <!-- Schedule Form -->
 
-        <input
-            type="tel"
-            id="phone"
-            placeholder="Phone Number"
-            required>
+    <section>
 
-        <textarea
-            id="address"
-            placeholder="Pickup Address"
-            required></textarea>
+        <h2>Schedule a Waste Pickup</h2>
 
-        <select id="wasteType" required>
-            <option value="">Select Waste Type</option>
-            <option>Household Waste</option>
-            <option>Plastic</option>
-            <option>Paper</option>
-            <option>Glass</option>
-            <option>Metal</option>
-            <option>Organic Waste</option>
-        </select>
+        <form id="pickupForm">
 
-        <input
-            type="date"
-            id="date"
-            required>
+            <label for="name">Full Name</label>
 
-        <input
-            type="time"
-            id="time"
-            required>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required>
 
-        <button type="submit">
-            Schedule Pickup
-        </button>
+            <label for="phone">Phone Number</label>
 
-    </form>
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                required>
 
-    <!-- Search -->
-    <input
-        type="text"
-        id="search"
-        placeholder="Search by name, address or waste type">
+            <label for="address">Pickup Address</label>
 
-    <!-- Filter -->
-    <select id="statusFilter">
-        <option value="all">All Pickups</option>
-        <option value="pending">Pending</option>
-        <option value="today">Due Today</option>
-        <option value="completed">Completed</option>
-    </select>
+            <textarea
+                id="address"
+                placeholder="Enter pickup address"
+                required></textarea>
 
-    <!-- Pickup List -->
-    <h2>Scheduled Pickups</h2>
+            <label for="wasteType">Waste Type</label>
 
-    <div id="pickupList"></div>
+            <select id="wasteType" required>
 
-    <hr>
+                <option value="">Select Waste Type</option>
 
-    <!-- Feedback -->
-    <h2>Customer Feedback</h2>
+                <option>Household Waste</option>
 
-    <input
-        type="text"
-        id="feedbackName"
-        placeholder="Your Name">
+                <option>Plastic</option>
 
-    <select id="rating">
-        <option value="">Select Rating</option>
-        <option>⭐⭐⭐⭐⭐</option>
-        <option>⭐⭐⭐⭐</option>
-        <option>⭐⭐⭐</option>
-        <option>⭐⭐</option>
-        <option>⭐</option>
-    </select>
+                <option>Paper</option>
 
-    <textarea
-        id="comment"
-        placeholder="Leave your feedback"></textarea>
+                <option>Glass</option>
 
-    <button onclick="saveFeedback()">
-        Submit Feedback
-    </button>
+                <option>Metal</option>
 
-    <div id="feedbackList"></div>
+                <option>Organic Waste</option>
 
-    <footer>
-        <hr>
-        <p><strong>Waste Pickup Scheduler</strong></p>
-        <p>Developed by Elijah Omiwole</p>
-        <p>3MTT NextGen Project – 2026</p>
-    </footer>
+            </select>
 
-</div>
+            <label for="date">Pickup Date</label>
 
-<script src="script.js"></script>
+            <input
+                type="date"
+                id="date"
+                required>
 
-</body>
-</html>
+            <label for="time">Pickup Time</label>
+
+            <input
+                type="time"
+                id="time"
+                required>
+
+            <button type="submit">
+                Schedule Pickup
+            </button>
+
+        </form>
+
+    </section>
